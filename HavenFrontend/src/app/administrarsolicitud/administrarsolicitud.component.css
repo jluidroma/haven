@@ -1,0 +1,65 @@
+/* Encabezado */
+.header-container {
+     display: flex;
+     align-items: center;
+     height: 90px;
+     padding-left: 10%;
+     border-bottom: 3px solid #dcdcdc;
+   }
+   .header-title {
+     font-size: 1.8rem;
+     font-weight: bold;
+   }
+   
+   /* Tabla */
+   .table-container {
+     padding: 0 5%;
+   }
+   .table-header {
+     background-color: #6c757d; /* Gris oscuro elegante */
+     color: white;
+     font-weight: bold;
+   }
+   .table-row:hover {
+     background-color: #f9f9f9;
+     transition: background-color 0.3s ease;
+   }
+   .badge {
+     padding: 0.5rem 1rem;
+     font-size: 0.9rem;
+     border-radius: 10px;
+     text-transform: capitalize;
+   }
+   
+   /* Botones */
+   .btn {
+     transition: all 0.3s ease;
+   }
+   .btn:hover {
+     transform: scale(1.05);
+   }
+   .btn-success {
+     background-color: #28a745;
+     border: none;
+   }
+   .btn-success:hover {
+     background-color: #218838;
+   }
+   .btn-danger {
+     background-color: #dc3545;
+     border: none;
+   }
+   .btn-danger:hover {
+     background-color: #c82333;
+   }
+   
+   /* Responsivo */
+   @media (max-width: 768px) {
+     .header-title {
+       font-size: 1.4rem;
+     }
+     .table-container {
+       padding: 0 2%;
+     }
+   }
+   

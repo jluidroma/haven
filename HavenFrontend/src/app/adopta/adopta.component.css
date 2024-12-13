@@ -1,0 +1,44 @@
+/* Encabezado */
+.header-title {
+     font-size: 2.5rem;
+     font-weight: bold;
+     color: #2c3e50;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+     margin-bottom: 1rem;
+   }
+   
+   /* Tarjetas */
+   .card-custom {
+     border-radius: 12px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     max-width: 100%; /* Ajuste automático */
+   }
+   .card-custom:hover {
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   }
+   
+   /* Imagen */
+   .mascota-img {
+     height: 180px;
+     object-fit: cover;
+     border-top-left-radius: 12px;
+     border-top-right-radius: 12px;
+   }
+   
+   /* Texto */
+   .card-title {
+     font-size: 1.25rem;
+     font-weight: bold;
+     color: #34495e;
+   }
+   .card-text {
+     font-size: 0.9rem;
+     color: #7f8c8d;
+   }
+   
+   /* Botón */
+   .hover-btn {
+     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+   }
+   

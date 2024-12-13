@@ -1,0 +1,74 @@
+/* Encabezado */
+.header-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px;
+     background-color: #f8f9fa;
+     border-bottom: 2px solid #e9ecef;
+   }
+   .header-title {
+     font-size: 1.8rem;
+     font-weight: bold;
+     color: #333;
+   }
+   .back-button {
+     background-color: #ff6b6b;
+     color: white;
+     border: none;
+     transition: all 0.3s ease;
+   }
+   .back-button:hover {
+     background-color: #ff4d4d;
+     transform: scale(1.1);
+   }
+   
+   /* Cards */
+   .card {
+     border-radius: 15px;
+     overflow: hidden;
+   }
+   .card-img-top {
+     height: 300px;
+     object-fit: cover;
+   }
+   .card-body h2 {
+     font-size: 1.6rem;
+     font-weight: bold;
+     color: #333;
+   }
+   .card-body p {
+     font-size: 1rem;
+     color: #666;
+   }
+   
+   /* Formulario */
+   .card-header {
+     border-radius: 15px 15px 0 0;
+     font-size: 1.5rem;
+     text-align: center;
+   }
+   .form-label {
+     font-weight: 500;
+     color: #555;
+   }
+   .btn-success {
+     background-color: #28a745;
+     border: none;
+     transition: all 0.3s ease;
+   }
+   .btn-success:hover {
+     background-color: #218838;
+     transform: scale(1.05);
+   }
+   
+   /* Responsivo */
+   @media (max-width: 768px) {
+     .card-img-top {
+       height: 200px;
+     }
+     .header-title {
+       font-size: 1.5rem;
+     }
+   }
+   

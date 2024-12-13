@@ -1,0 +1,53 @@
+<div>
+     <div class="header-container bg-primary text-white">
+       <div class="header-title-container">
+         <h2 class="header-title">*** Administrar Solicitudes ***</h2>
+       </div>
+     </div>
+   
+     <div class="table-container mt-4">
+       <div class="table-responsive">
+         <table class="table table-hover align-middle text-center">
+           <thead class="table-header text-white bg-secondary">
+             <tr>
+               <th scope="col" style="width: 7%;">ID</th>
+               <th scope="col" style="width: 28%;">Nombre Solicitante</th>
+               <th scope="col" style="width: 10%;">Identificación</th>
+               <th scope="col" style="width: 10%;">Teléfono</th>
+               <th scope="col" style="width: 10%;">Estado</th>
+               <th scope="col" style="width: 35%;">Acciones</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr *ngFor="let solicitud of solicitudes | async" class="table-row">
+               <td>{{ solicitud.id_solicitud }}</td>
+               <td>{{ solicitud.nombre_solicitante }}</td>
+               <td>{{ solicitud.identificacion }}</td>
+               <td>{{ solicitud.telefono }}</td>
+               <td>
+                 <span
+                   class="badge"
+                   [ngClass]="{
+                     'bg-success': solicitud.estado === 'Aceptada',
+                     'bg-warning': solicitud.estado === 'Pendiente',
+                     'bg-danger': solicitud.estado === 'Rechazada'
+                   }"
+                 >
+                   {{ solicitud.estado }}
+                 </span>
+               </td>
+               <td>
+                 <button class="btn btn-success btn-sm me-2 shadow-sm" (click)="aceptarSolicitud(solicitud.id_solicitud)">
+                   <i class="bi bi-clipboard2-check-fill"></i> Aceptar
+                 </button>
+                 <button class="btn btn-danger btn-sm shadow-sm" (click)="eliminarSolicitud(solicitud.id_solicitud)">
+                   <i class="bi bi-trash"></i> Eliminar
+                 </button>
+               </td>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+     </div>
+   </div>
+   

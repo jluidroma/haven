@@ -1,0 +1,80 @@
+<div class="header-container">
+     <h2 class="header-title">Adoptar Mascota</h2>
+     
+   </div>
+   
+   <div class="container mt-5 mb-5">
+     <div class="row justify-content-center align-items-start">
+       <!-- Imagen de la mascota -->
+       <div class="col-md-5 mb-4">
+         <div class="card shadow-lg border-0">
+           <img [src]="mascota.imagen" alt="Imagen de la Mascota" class="card-img-top rounded-top">
+           <div class="card-body text-center">
+             <h2 class="card-title">{{mascota.nombre}}</h2>
+             <p class="card-text"><strong>Raza:</strong> {{mascota.raza}}</p>
+             <p class="card-text"><strong>Edad:</strong> {{mascota.edad}}</p>
+             <p class="card-text"><strong>Sexo:</strong> {{mascota.sexo}}</p>
+           </div>
+         </div>
+       </div>
+   
+       <!-- Formulario de solicitud -->
+       <div class="col-md-7">
+         <div class="card shadow-lg border-0">
+           <div class="card-header bg-success text-white">
+             <h4 class="mb-0">Solicitud de Adopción</h4>
+           </div>
+           <div class="card-body">
+             <form (ngSubmit)="onSubmit()" #solicitudForm="ngForm">
+               <!-- Nombre del Solicitante -->
+               <div class="form-group mb-3">
+                 <label for="nombreSolicitante" class="form-label">Nombre del Solicitante</label>
+                 <input 
+                   type="text" 
+                   class="form-control" 
+                   id="nombreSolicitante" 
+                   placeholder="Ingresa tu nombre" 
+                   required 
+                   [(ngModel)]="solicitud.nombre_solicitante" 
+                   name="nombre_solicitante">
+               </div>
+   
+               <!-- Identificación -->
+               <div class="form-group mb-3">
+                 <label for="identificacion" class="form-label">Identificación</label>
+                 <input 
+                   type="text" 
+                   class="form-control" 
+                   id="identificacion" 
+                   placeholder="Número de identificación" 
+                   required 
+                   [(ngModel)]="solicitud.identificacion" 
+                   name="identificacion">
+               </div>
+   
+               <!-- Celular -->
+               <div class="form-group mb-3">
+                 <label for="celular" class="form-label">Celular</label>
+                 <input 
+                   type="tel" 
+                   class="form-control" 
+                   id="celular" 
+                   placeholder="Número de teléfono" 
+                   required 
+                   [(ngModel)]="solicitud.telefono" 
+                   name="telefono">
+               </div>
+   
+               <!-- Botón de Enviar Solicitud -->
+               <div class="d-grid gap-2">
+                 <button type="submit" class="btn btn-success btn-lg shadow" [disabled]="!solicitudForm.form.valid">
+                   Enviar Solicitud
+                 </button>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   

@@ -1,0 +1,32 @@
+<div class="container my-4">
+  <!-- Encabezado -->
+  <div class="header-container text-center mb-4">
+    <h2 class="header-title">Adoptar Mascotas</h2>
+  </div>
+
+  <!-- Contenedor de Tarjetas -->
+  <div class="row g-4 justify-content-center">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let mascota of mascotas | async">
+      <div class="card card-custom shadow-lg hover-effect" *ngIf="mascota?.estado_adopcion !== 'Adoptado'">
+        <!-- Imagen -->
+        <img 
+          [src]="mascota.imagen" 
+          class="card-img-top mascota-img" 
+          alt="Imagen de la mascota">
+        <!-- Contenido -->
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ mascota.nombre }}</h5>
+          <p class="card-text text-muted mb-2"><strong>Raza:</strong> {{ mascota.raza }}</p>
+          <p class="card-text text-muted mb-2"><strong>Edad:</strong> {{ mascota.edad }} años</p>
+          <p class="card-text text-muted mb-3"><strong>Sexo:</strong> {{ mascota.sexo }}</p>
+          <!-- Botón -->
+          <button 
+            class="btn btn-success w-100 hover-btn"
+            [routerLink]="['/mascotas/agregarsolicitud/', mascota.id]">
+            <i class="bi bi-heart-fill"></i> Adoptar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
